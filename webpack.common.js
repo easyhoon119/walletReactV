@@ -42,30 +42,23 @@ module.exports = {
         {
             test : /\.(woff|woff2|eot|ttf|otf)$/i,
             use : [{
-                loader : 'file-loader',
+                loader : 'url-loader',
                 options : {
+                    limit : 5000,
+                    fallback : 'file-loader',
                     name : '[contenthash].[ext]',
                     outputPath : 'assets/fonts/'
                 }
             }]
         },
         {
-            test : /\.svg$/i,
-            use : [{
-                loader : 'file-loader',
-                options : {
-                    name : '[contenthash].[ext]',
-                    outputPath : 'assets/images/'
-                }
-            }]
-        },
-        {
-            test : /\.(png|jpg|jpeg|gif|webp)$/i,
+            test : /\.(png|jpg|jpeg|gif|webp|svg|ico)$/i,
             use : [{
                 loader : 'url-loader',
                 options : {
                     limit : 5000,
                     fallback : 'file-loader',
+                    name : '[contenthash].[ext]',
                     outputPath : 'assets/images/'
                 }
             }]

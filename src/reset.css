@@ -46,3 +46,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@font-face {
+    font-family: 'basic-font';
+    src : url("./assets/font/basicfont.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'basic-font';
+    src : url("./assets/font/basicfont.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  * {
+    font-family: 'basic-font', sans-serif !important;
+  }
