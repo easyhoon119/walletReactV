@@ -3,6 +3,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const isProduction = process.env.NODE_ENV === 'PRODUCTION';
 
@@ -82,7 +85,8 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.DefinePlugin({
-            IS_PRODUCTION: isProduction
+            IS_PRODUCTION: isProduction,
+            'process.env' : JSON.stringify(process.env)
         })
     ],
 }

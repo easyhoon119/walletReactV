@@ -1,9 +1,16 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "./app"
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import RootReducer from "./store/reducers";
+import RootRoute from "./routes";
+
+const store = createStore(RootReducer);
 
 ReactDom.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>, document.querySelector('#root')
+    <Provider store={store}>
+        <React.StrictMode>
+            <RootRoute />
+        </React.StrictMode>
+    </Provider>, document.querySelector('#root')
 );
