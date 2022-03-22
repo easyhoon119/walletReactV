@@ -50,7 +50,17 @@ module.exports = {
             }]
         },
         {
-            test : /\.(png|jpg|jpeg|gif|svg|webp)$/i,
+            test : /\.svg$/i,
+            use : [{
+                loader : 'file-loader',
+                options : {
+                    name : '[contenthash].[ext]',
+                    outputPath : 'assets/images/'
+                }
+            }]
+        },
+        {
+            test : /\.(png|jpg|jpeg|gif|webp)$/i,
             use : [{
                 loader : 'url-loader',
                 options : {
