@@ -22,6 +22,12 @@ module.exports = {
     module : {
         rules : [
             {
+                test : /\.js$/i,
+                enforce : "pre",
+                use : ["source-map-loader"]
+            }
+            ,
+            {
             test : /\.css$/i,
             use : [
                 {
@@ -38,21 +44,9 @@ module.exports = {
                     loader : 'postcss-loader',
                 }
             ]
-        }, 
-        {
-            test : /\.(woff|woff2|eot|ttf|otf)$/i,
-            use : [{
-                loader : 'url-loader',
-                options : {
-                    limit : 5000,
-                    fallback : 'file-loader',
-                    name : '[contenthash].[ext]',
-                    outputPath : 'assets/fonts/'
-                }
-            }]
         },
         {
-            test : /\.(png|jpg|jpeg|gif|webp|svg|ico)$/i,
+            test : /\.(png|jpg|jpeg|gif|webp|svg|ico)(\?v=\d+\.\d+\.\d+)?$/i,
             use : [{
                 loader : 'url-loader',
                 options : {
@@ -62,6 +56,12 @@ module.exports = {
                     outputPath : 'assets/images/'
                 }
             }]
+        },
+        {
+            test : /\.(woff|woff2|eot|ttf|otf)(\?v=\d+\.\d+\.\d+)?$/i,
+            generator : {
+                filename : 'assets/fonts/[contenthash].[ext]'
+            }
         },
         {
             test : /\.tsx?$/,
