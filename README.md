@@ -12,3 +12,6 @@
 # 2.
 - font가 안불러와지는 문제 해결
 - build 파일 동작 확인(with serve)
+
+# 3.
+- redux dux 패턴 적용
