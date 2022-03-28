@@ -2,15 +2,15 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './reset.css';
 import './setRem.css'
-import { rootReducerType } from 'store/reducers';
 import styled from 'styled-components';
 import profileIcon from "./assets/icon/ic-nav-profile2.png";
 import sinImage from "./assets/image/sin.jpg";
+import { RootReducerType } from 'reduxes';
 
 function App() {
 
     const navigate = useNavigate();
-    const { name, email } = useSelector((state : rootReducerType) => state.ExampleReducer);
+    const { name, email } = useSelector((state : RootReducerType) => state.ExampleReducer);
 
     const handleGoApage = () => {
         navigate('/aPage');

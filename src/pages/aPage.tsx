@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { ExampleAction } from "../store/actions/exampleAction";
+import { ExampleAction } from "../reduxes/exampleRedux";
 import busIcon from "../assets/icon/busIcon.svg";
 
 function APage () {

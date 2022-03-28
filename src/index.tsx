@@ -2,15 +2,15 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import RootReducer from "./store/reducers";
+import rootReducer from "./reduxes";
 import RootRoute from "./routes";
 
-const store = createStore(RootReducer);
+const store = createStore(rootReducer);
 
 ReactDom.render(
     <Provider store={store}>
         <React.StrictMode>
             <RootRoute />
         </React.StrictMode>
-    </Provider>, document.querySelector('#root')
+    </Provider>, document.querySelector('#root') as HTMLElement
 );
