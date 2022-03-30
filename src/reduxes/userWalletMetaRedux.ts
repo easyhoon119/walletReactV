@@ -4,6 +4,7 @@ type UserWalletMetaState = {
     Metaaddress : string;
     Metaname : string;
     Metabalance : number;
+    Metaconnect : boolean;
 }
 
 export const UserWalletMetaAction = (data : UserWalletMetaState) => ({type : USERWALLETMETA, data : data});
@@ -12,6 +13,7 @@ const initialState : UserWalletMetaState = {
     Metaaddress : '',
     Metaname : 'Metamask',
     Metabalance : 0,
+    Metaconnect : false
 };
 
 type UserWalletActionType =
@@ -24,7 +26,8 @@ function UserWalletMetaReducer(state : UserWalletMetaState = initialState , acti
                 ...state,
                 Metaaddress : action.data.Metaaddress,
                 Metaname : action.data.Metaname,
-                Metabalance : action.data.Metabalance
+                Metabalance : action.data.Metabalance,
+                Metaconnect : action.data.Metaconnect
             }
         }
         default : {

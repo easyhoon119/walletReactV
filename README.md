@@ -19,3 +19,6 @@
 # 4.
 - metmask 지갑 연동
 - kaikas 지갑 연동
+
+# 5.
+- useMediaQuery 연결(react-responsive)

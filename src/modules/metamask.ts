@@ -102,3 +102,16 @@ export const signMeta = async (message : any, webEth : any, eth : any) => {
     }
     return false;
 }
+
+export const handleConnectMeta = () => {
+    if(!window.ethereum.selectedAddress) {
+        if(beforeWalletCheckMeta() === true) {
+            connectWalletMeta(window.ethereum).then((addr) => {
+                console.log(addr);
+            })
+        }
+    }
+    else {
+        console.log('Metamask is already connected');
+    }
+}

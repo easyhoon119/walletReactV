@@ -1,9 +1,9 @@
+import App from "./app";
 import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./reduxes";
-import RootRoute from "./routes";
 
 const store = createStore(rootReducer);
 
@@ -18,7 +18,7 @@ declare global {
 ReactDom.render(
     <Provider store={store}>
         <React.StrictMode>
-            <RootRoute />
+            <App />
         </React.StrictMode>
     </Provider>, document.querySelector('#root') as HTMLElement
 );

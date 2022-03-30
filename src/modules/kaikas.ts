@@ -100,3 +100,14 @@ export const signKai = async (message : any, webEth : any, eth : any) => {
     }
     return false;
 }
+
+export const handelConnectKai = () => {
+    if(!window.klaytn.selectedAddress) {
+        connectWalletKai(window.klaytn).then((addr)=>{
+            console.log(addr);
+        })
+    }
+    else {
+        console.log('Kaikas is already connected');
+    }
+}
