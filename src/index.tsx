@@ -7,6 +7,14 @@ import RootRoute from "./routes";
 
 const store = createStore(rootReducer);
 
+declare global {
+    interface Window {
+        ethereum : any;
+        klaytn : any;
+        caver : any;
+    }
+}
+
 ReactDom.render(
     <Provider store={store}>
         <React.StrictMode>

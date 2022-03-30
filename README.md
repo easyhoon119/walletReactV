@@ -15,3 +15,7 @@
 
 # 3.
 - redux dux 패턴 적용
+
+# 4.
+- metmask 지갑 연동
+- kaikas 지갑 연동

@@ -1,8 +1,12 @@
 import { combineReducers } from "redux";
 import ExampleReducer from "./exampleRedux";
+import UserWalletMetaReducer from "./userWalletMetaRedux";
+import UserWalletKaiReducer from "./userWalletKaiRedux";
 
 const rootReducer = combineReducers({
-    ExampleReducer
+    ExampleReducer,
+    UserWalletMetaReducer,
+    UserWalletKaiReducer
 });
 
 export default rootReducer;
