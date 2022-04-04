@@ -27,3 +27,22 @@
 
 - useMediaQuery 연결(react-responsive)
 - eslint, react-eslint, typescript-eslint 설정
+
+# 6.
+
+- js버전 및 node 충돌 해결
+- api 모듈 추가(
+  사용법 :
+  const [result, loading, error] = useApi(
+  `endpoint`,
+  "get",
+  ""
+  );
+
+  if (loading) {
+  return <div>로딩중...</div>;
+  }
+  if (error) {
+  navigate("/");
+  }
+  )

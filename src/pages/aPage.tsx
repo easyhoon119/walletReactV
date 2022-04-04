@@ -2,31 +2,45 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ExampleAction } from "../reduxes/exampleRedux";
 import busIcon from "../assets/icon/busIcon.svg";
+import { useEffect, useState } from "react";
 
-function APage () {
+function APage() {
+  const dispatch = useDispatch();
+  const [data, setData] = useState("hihi");
 
-    const dispatch = useDispatch();
+  useEffect(() => {
+    const loadingTest = setTimeout(() => {
+      setData("로딩끝");
+    }, 2000);
 
-    const handleExampleAction = () => {
-        dispatch(ExampleAction({
-            name : '안뇽',
-            email : "하세요"
-        }))
-    }
+    return () => {
+      clearTimeout(loadingTest);
+    };
+  }, []);
 
-    const handleChangeEnv = () => {
-        console.log(process.env.ENV_KEY);
-    }
-
-    return (
-        <>
-            A페이지
-            <Link to="/" >app으로 이동하기</Link>
-            <img src={busIcon} alt="example" width="200px" height="200px" />
-            <button onClick={handleExampleAction}>액션 발동시키기</button>
-            <button onClick={handleChangeEnv}>env 값 변경하기</button>
-        </>
+  const handleExampleAction = () => {
+    dispatch(
+      ExampleAction({
+        name: "안뇽",
+        email: "하세요",
+      })
     );
+  };
+
+  const handleChangeEnv = () => {
+    console.log(process.env.ENV_KEY);
+  };
+
+  return (
+    <>
+      A페이지
+      <Link to="/">app으로 이동하기</Link>
+      <p>{data}</p>
+      <img src={busIcon} alt="example" width="200px" height="200px" />
+      <button onClick={handleExampleAction}>액션 발동시키기</button>
+      <button onClick={handleChangeEnv}>env 값 변경하기</button>
+    </>
+  );
 }
 
 export default APage;
