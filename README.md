@@ -32,7 +32,7 @@
 
 - js버전 및 node 충돌 해결
 - api 모듈 추가
-  사용법 :
+- 사용법 :
 
   ```
   const [result, loading, error] = useApi(
@@ -45,6 +45,6 @@
   return <div>로딩중...</div>;
   }
   if (error) {
-  navigate("/");}
-  '''
+  navigate("/");
+  }
   ```
