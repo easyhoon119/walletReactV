@@ -1,33 +1,38 @@
-const EXAMPLE = 'example/EXAMPLE' as const;
+const EXAMPLE = "example/EXAMPLE" as const;
 
 type ExampleState = {
-    name : string;
-    email : string;
-}
-
-export const ExampleAction = (data : ExampleState) => ({type : EXAMPLE, data : data});
-
-const initialState : ExampleState = {
-    name : '지훈',
-    email : 'easy@gmail.com'
+    name: string;
+    email: string;
 };
 
-type ExampleActionType =
-    | ReturnType<typeof ExampleAction>;
+export const ExampleAction = (data: ExampleState) => ({
+    type: EXAMPLE,
+    data: data,
+});
 
-function ExampleReducer(state : ExampleState = initialState , action : ExampleActionType) : ExampleState {
-    switch(action.type) {
-        case EXAMPLE : {
+const initialState: ExampleState = {
+    name: "지훈",
+    email: "easy@gmail.com",
+};
+
+type ExampleActionType = ReturnType<typeof ExampleAction>;
+
+function ExampleReducer(
+    state: ExampleState = initialState,
+    action: ExampleActionType
+): ExampleState {
+    switch (action.type) {
+        case EXAMPLE: {
             return {
                 ...state,
-                name : action.data.name,
-                email : action.data.email
-            }
+                name: action.data.name,
+                email: action.data.email,
+            };
         }
-        default : {
+        default: {
             return {
-                ...state
-            }
+                ...state,
+            };
         }
     }
 }

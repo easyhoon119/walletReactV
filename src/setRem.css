@@ -1,16 +1,31 @@
-@media screen and (max-width: 768px) {
+/* 스마트폰 세로 */
+html {
+    font-size: 10px;
+}
+
+@media screen and (min-width: 576px) {
+    /* 스마트폰 가로 */
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* 타블렛 */
     html {
         font-size: 14px;
     }
 }
 
-/* PC 반응형 */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 992px) {
+    /* 데스크탑 */
     html {
         font-size: 16px;
     }
 }
-@media screen and (min-width: 1024px) {
+
+@media screen and (min-width: 1200px) {
+    /* 큰 데스크탑 */
     html {
         font-size: 18px;
     }

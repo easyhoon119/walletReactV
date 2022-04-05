@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
     ExampleReducer,
     UserWalletMetaReducer,
     UserWalletKaiReducer,
-    NowMediaQueryReducer
+    NowMediaQueryReducer,
 });
 
 export default rootReducer;
