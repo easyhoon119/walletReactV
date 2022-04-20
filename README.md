@@ -31,7 +31,7 @@
 # 6.
 
 -   js버전 및 node 충돌 해결
--   api 모듈 추가
+-   api 커스텀 훅 추가(삭제)
 -   사용법 :
 
     ```
@@ -53,3 +53,8 @@
 
 -   react-cookie 테스트
 -   setRem 기준 변경
+
+# 8.
+
+-   apiClent 모듈 추가
+-   useScroll 커스텀 훅 추가

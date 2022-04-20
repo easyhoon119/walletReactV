@@ -9,8 +9,10 @@ import styled from "styled-components";
 import { useCookies } from "react-cookie";
 
 function HomePage() {
+    //react router hook
     const navigate = useNavigate();
     const [cookie] = useCookies(["test"]);
+    //redux 상태값 가져오기
     const { name, email } = useSelector(
         (state: RootReducerType) => state.ExampleReducer
     );
@@ -26,6 +28,7 @@ function HomePage() {
 
     const handleGoApage = () => {
         if (Metaconnect || Kaiconnect) {
+            //react routing
             navigate("/aPage");
         } else {
             alert("Please conncet wallet");
@@ -63,6 +66,7 @@ function HomePage() {
     );
 }
 
+//styled-components
 const HomePageStyle = styled.div`
     font-size: 1.5rem;
 `;

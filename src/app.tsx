@@ -23,6 +23,7 @@ function App() {
     const ethereum = useRef(window.ethereum);
     const klaytn = useRef(window.klaytn);
 
+    //react-responsive
     const isPc = useMediaQuery({
         query: `(min-width: 768px)`,
     });
